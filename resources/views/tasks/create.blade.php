@@ -13,12 +13,12 @@
 
                         <div class="form-group">
                             <label for="name">{{ __('Nome da Tarefa') }}:</label>
-                            <input type="text" id="name" name="name" class="form-control">
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 2em;">
                             <label for="category_id">{{ __('Categoria') }}:</label>
-                            <select name="category_id" id="category_id" class="form-control">
+                            <select name="category_id" id="category_id" class="form-control" required>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
