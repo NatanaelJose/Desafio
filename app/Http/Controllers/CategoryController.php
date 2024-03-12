@@ -9,7 +9,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $user = auth()->user();
+        $categories = $user->categories()->get();
         return view('categories.index', compact('categories'));
     }
 
@@ -20,10 +21,8 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        Category::create([
-            'name' => $request->input('name')
-        ]);
-
+        $user = auth()->user();
+        $user->categories()->create($request->all());
         return redirect()->route('categories.index');
     }
 

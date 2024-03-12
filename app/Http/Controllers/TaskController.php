@@ -6,19 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Category;
 
+use Illuminate\Support\Facades\Auth;
+
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all();
-        $categories = Category::with('tasks')->get();
+        $user = auth()->user();
+        $tasks = Task::where('user_id', $user->id)->get();
+        $categories = Category::with('tasks')->where('user_id', $user->id)->get();
 
         return view('tasks.index', compact('tasks', 'categories'));
     }
 
+
     public function create()
     {
-        $categories = Category::all();
+        $user = Auth::user();
+        $categories = Category::where('user_id', $user->id)->get();
         return view('tasks.create', compact('categories'));
     }
 

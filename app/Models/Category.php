@@ -14,6 +14,10 @@ class Category extends Model
     {
         return $this->hasMany(Task::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     protected static function boot()
     {
         parent::boot();
