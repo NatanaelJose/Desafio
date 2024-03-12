@@ -14,5 +14,13 @@ class Category extends Model
     {
         return $this->hasMany(Task::class);
     }
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($category) {
+            $category->tasks()->delete();
+        });
+    }
 }
 
