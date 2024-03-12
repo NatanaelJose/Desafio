@@ -1,7 +1,7 @@
 # Desafio
 
 ## Descrição
-Este é um projeto para [descreva brevemente o propósito do projeto aqui].
+Este projeto consiste no desenvolvimento de um sistema de gerenciamento de tarefas utilizando o framework Laravel. O objetivo principal é permitir que os usuários possam criar, visualizar, editar e excluir suas tarefas de forma eficiente, além de associá-las a categorias específicas. Para garantir a segurança e a privacidade das informações, o sistema inclui funcionalidades básicas de autenticação.
 
 ## Como Rodar
 ### Pré-requisitos
