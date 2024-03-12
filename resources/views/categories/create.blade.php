@@ -13,7 +13,7 @@
 
                         <div class="form-group" style="margin-bottom:2em;">
                             <label for="name">{{ __('Nome da Categoria') }}:</label>
-                            <input type="text" id="name" name="name" class="form-control">
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
 
                         <button type="submit" style="margin-right: 1em;" class="btn btn-primary">{{ __('Salvar') }}</button>
